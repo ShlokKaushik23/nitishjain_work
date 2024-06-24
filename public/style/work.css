@@ -886,13 +886,27 @@ main {
     justify-content: space-between;
     border-radius: 24px ;
   }
-  .category_section .category_button .allcategory_button{
+  .category_section .category_button .allcategory_button  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .category_section .category_button .allcategory_button div{
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap:24px;
     margin: 24px 24px 6px;
+    width: 50%;
     
+  }
 
+  .category_section .category_button .allcategory_button .project_count {
+    width: 100%;
+    text-align: center;
+    /* padding: 0; */
+    /* margin-right: 0; */
+    width: 50%;
   }
 
   
@@ -1227,13 +1241,27 @@ main {
     justify-content: space-between;
     border-radius: 24px ;
   }
-  .category_section .category_button .allcategory_button{
+  .category_section .category_button .allcategory_button  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .category_section .category_button .allcategory_button div{
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 12px;
     margin: 24px 12px 6px;
     
+  }
 
+  
+
+  .category_section .category_button .allcategory_button .project_count {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin-right: 0;
   }
 
   .category_section .category_button .btn {
@@ -1403,7 +1431,7 @@ main {
   .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton::after {
     content: "";
     position: absolute;
-    width: 80% !important;
+    width: 85% !important;
     height: 1.5px;
     display: block;
   

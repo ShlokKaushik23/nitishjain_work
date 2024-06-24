@@ -116,11 +116,19 @@
       <div class="overlay" id="overlay" style="display: none;"></div>
       <div class="category_button" id="myBtnContainer">
         <div class="allcategory_button">
+           
+          <div>
 
           <button class="btn" data-filter="Performances" onclick="toggleFilter(this)">Performances</button>
           <button class="btn" id="#" data-filter="Spaces" onclick="toggleFilter(this)">Spaces</button>
           <button class="btn" data-filter="Objects" onclick="toggleFilter(this)">Objects</button>
           <button class="btn" data-filter="Methods" onclick="toggleFilter(this)">Methods</button>
+        </div>
+
+          <div class="project_count" >
+            <p id="categoryCount">0 Projects</p>
+          </div>
+
         </div>
 
         <div class="bottom_button">
@@ -131,7 +139,7 @@
 
       </div>
       <div class="project_count">
-        <p id="categoryCount">0 Projects</p>
+        <p id="categoryCount2">0 Projects</p>
       </div>
 
     </section>
@@ -1191,6 +1199,8 @@
     }
 
     document.getElementById("categoryCount").innerText = visibleCount + " Projects";
+    document.getElementById("categoryCount2").innerText = visibleCount + " Projects";
+
   }
 
   function getActiveFilters() {
@@ -1250,6 +1260,8 @@
       w3AddClass(x[i], "visible");
     }
     document.getElementById("categoryCount").innerText = x.length + " Projects";
+    document.getElementById("categoryCount2").innerText = x.length + " Projects";
+
   }
 
   function isMobileOrTablet() {
