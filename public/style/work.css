@@ -325,7 +325,9 @@ main {
   padding: 0 0 0 12px;  
 }
 
-
+#categoryCount{
+  display: none;
+}
 
 
 .project_container .filterDiv .project_section .project_details .project_timeline .project_category .performances {
@@ -909,6 +911,10 @@ main {
     width: 50%;
   }
 
+  #categoryCount{
+    display: block;
+  }
+
   
   .category_section .category_button .btn {
     outline: 1px solid var(--text-color);
@@ -1254,7 +1260,9 @@ main {
     margin: 24px 12px 6px;
     
   }
-
+  #categoryCount{
+    display: block;
+  }
   
 
   .category_section .category_button .allcategory_button .project_count {
