@@ -5,15 +5,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-
   <link rel="stylesheet" href="./public/style/work.css" />
   <link rel="stylesheet" href="./public/style/index.css" />
   <link rel="stylesheet" href="./public/style/global.css">
-
-  <link rel="stylesheet" href="./public/style/global.css" />
-  <link rel="stylesheet" href="./public/style/index.css" />
-  <link rel="stylesheet" href="./public/style/work.css">
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica Neue:wght@400;700&display=swap" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Playfair Display:wght@400;500;600;700&display=swap" />
@@ -32,6 +26,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"
     integrity="sha512-kwJUhJJaTDzGp6VTPBbMQWBFUof6+pv0SM3s8fo+E6XnPmVmtfwENK0vHYup3tsYnqHgRDoBDTJWoq7rnQw2+g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style> 
+      .lg-toolbar {
+        background-color: transparent !important;
+      }
+      
+      .fancybox-slide--current {
+        background-color: black !important;
+      }
+    </style>
 
     <!-- ========== FANCY BOX CSSS =========== -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
@@ -169,13 +172,8 @@
 
             <div class="video_popup">
 
-              <!-- Vimeo video links with Fancybox attributes for Video 1 -->
-              <a data-fancybox="video1" data-src="https://player.vimeo.com/video/795579030?autoplay=1" href="javascript:;" style="display:none;"></a>
-              <a data-fancybox="video1" data-src="https://player.vimeo.com/video/795579030?autoplay=1" href="javascript:;" style="display:none;"></a>
-              <a data-fancybox="video1" data-src="https://player.vimeo.com/video/811580031?autoplay=1" href="javascript:;" style="display:none;"></a>
-
-
-              
+              <a data-fancybox="video1" data-src="https://player.vimeo.com/video/874698326/" href="javascript:;" style="display:none;"></a>
+                         
           </div>
 
           </div>
@@ -223,25 +221,16 @@
             <div class="details_end">
               <span></span>
               <button onclick="shareProject('filterDiv-2')"><i class="ri-share-forward-fill share"></i>Share</button>
-              <button class="watch-video-button performances">Watch Video</button>
-
+              <button class="watchvideobutton" data-video="video2">Watch Video</button>
 
             </div>
 
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                <span id="close-popup" class="close"><i class="ri-close-fill"></i></span>
-                <div class="carousel">
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/944570080?h=01e426bfb3&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
+            <div class="video_popup">
 
-                </div>
-              </div>
-            </div>
+              <a data-fancybox="video2" data-src="https://player.vimeo.com/video/944570080?h=01e426bfb3&title=0&portrait=0?autoplay=1" href="javascript:;" style="display:none;"></a>
+          </div>
+
+
 
           </div>
           <div class="project_description">
@@ -285,24 +274,17 @@
             <div class="details_end">
               <span></span>
               <button onclick="shareProject('filterDiv-3')"><i class="ri-share-forward-fill share"></i>Share</button>
-              <button class="watch-video-button objects">Watch Video</button>
+              <button class="watchvideobutton" data-video="video3">Watch Video</button>
+
 
             </div>
 
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                <span id="close-popup" class="close"><i class="ri-close-fill"></i></span>
-                <div class="carousel">
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/944571329?h=f68cac384a&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
+            <div class="video_popup">
 
-                </div>
-              </div>
-            </div>
+              <a data-fancybox="video3" data-src="https://player.vimeo.com/video/944571329/" href="javascript:;" style="display:none;"></a>
+          </div>
+
+         
 
           </div>
           <div class="project_description">
@@ -350,49 +332,22 @@
             <div class="details_end">
               <span></span>
               <button onclick="shareProject('filterDiv-4')"><i class="ri-share-forward-fill share"></i>Share</button>
-              <button class="watch-video-button methods">Watch Video</button>
-
+              <button class="watchvideobutton" data-video="video4">Watch Video</button>
             </div>
 
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                <span id="close-popup" class="close"><i class="ri-close-fill"></i></span>
-                <div class="carousel">
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/942939502?h=dcede0fb06&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/942940887?h=20c31c154f&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/943124689?h=f68cac384a&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/944575456?h=f68cac384a&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/944591020?h=f68cac384a&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
+            <div class="video_popup">
 
+              <a data-fancybox="video4" data-src="https://player.vimeo.com/video/942939502/" href="javascript:;" style="display:none;"></a>
+              <a data-fancybox="video4" data-src="https://player.vimeo.com/video/942940887/" href="javascript:;" style="display:none;"></a>
+              <a data-fancybox="video4" data-src="https://player.vimeo.com/video/943124689/" href="javascript:;" style="display:none;"></a>
+              <a data-fancybox="video4" data-src="https://player.vimeo.com/video/944575456/" href="javascript:;" style="display:none;"></a>
+              <a data-fancybox="video4" data-src="https://player.vimeo.com/video/944591020/" href="javascript:;" style="display:none;"></a>
 
-                </div>
-              </div>
-            </div>
+              
+
+          </div>
+
+            
 
           </div>
           <div class="project_description">
@@ -442,25 +397,15 @@
             <div class="details_end">
               <span></span>
               <button onclick="shareProject('filterDiv-5')"><i class="ri-share-forward-fill share"></i>Share</button>
-              <button class="watch-video-button objects">Watch Video</button>
-
+              <button class="watchvideobutton" data-video="video5">Watch Video</button>
             </div>
 
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                <span id="close-popup" class="close"><i class="ri-close-fill"></i></span>
-                <div class="carousel">
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/795599136?h=dcede0fb06&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                  
-        
-                </div>
-              </div>
-            </div>
+            <div class="video_popup">
+
+              <a data-fancybox="video5" data-src="https://player.vimeo.com/video/795599136/" href="javascript:;" style="display:none;"></a>
+          </div>
+
+       
 
           </div>
           <div class="project_description">
@@ -497,42 +442,25 @@
             <div class="project_heads">
               <h1 class="project_heading">a-where-ness
 
-
               </h1>
               <p class="project_subheading">A manual for exploring Prague through the senses
-
-
-
 
               </p>
             </div>
             <div class="details_end">
               <span></span>
               <button onclick="shareProject('filterDiv-6')"><i class="ri-share-forward-fill share"></i>Share</button>
-              <button class="watch-video-button methods">Watch Video</button>
-            </div>
+              <button class="watchvideobutton" data-video="video6">Watch Video</button>
 
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                <span id="close-popup" class="close"><i class="ri-close-fill"></i></span>
-                <div class="carousel">
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/793403662?h=dcede0fb06&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/793452353?h=dcede0fb06&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                  
-        
-                </div>
-              </div>
             </div>
+            <div class="video_popup">
+
+              <a data-fancybox="video6" data-src="https://player.vimeo.com/video/793403662/" href="javascript:;" style="display:none;"></a>
+              <a data-fancybox="video6" data-src="https://player.vimeo.com/video/793452353/" href="javascript:;" style="display:none;"></a>
+
+          </div>
+
+           
 
           </div>
           <div class="project_description">
@@ -577,26 +505,15 @@
             <div class="details_end">
               <span></span>
               <button onclick="shareProject('filterDiv-7')"><i class="ri-share-forward-fill share"></i>Share</button>
-              <button class="watch-video-button performances">Watch Video</button>
-
+              <button class="watchvideobutton" data-video="video7">Watch Video</button>
             </div>
 
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                <span id="close-popup" class="close"><i class="ri-close-fill"></i></span>
-                <div class="carousel">
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/811580031?h=dcede0fb06&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                 
-                  
-        
-                </div>
-              </div>
-            </div>
+            <div class="video_popup">
+
+              <a data-fancybox="video7" data-src="https://player.vimeo.com/video/811580031/" href="javascript:;" style="display:none;"></a>
+          </div>
+
+  
 
           </div>
           <div class="project_description">
@@ -643,26 +560,16 @@
             <div class="details_end">
               <span></span>
               <button onclick="shareProject('filterDiv-8')"><i class="ri-share-forward-fill share"></i>Share</button>
-              <button class="watch-video-button spaces">Watch Video</button>
+              <button class="watchvideobutton" data-video="video8">Watch Video</button>
+
 
             </div>
+            <div class="video_popup">
 
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                <span id="close-popup" class="close"><i class="ri-close-fill"></i></span>
-                <div class="carousel">
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/942936116?h=dcede0fb06&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                 
-                  
-        
-                </div>
-              </div>
-            </div>
+              <a data-fancybox="video8" data-src="https://player.vimeo.com/video/942936116/" href="javascript:;" style="display:none;"></a>
+          </div>
+
+         
 
           </div>
           <div class="project_description">
@@ -766,24 +673,16 @@
             <div class="details_end">
               <span></span>
               <button onclick="shareProject('filterDiv-10')"><i class="ri-share-forward-fill share"></i>Share</button>
-              <button class="watch-video-button performances">Watch Video</button>
+              <button class="watchvideobutton" data-video="video10">Watch Video</button>
+
 
             </div>
 
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                <span id="close-popup" class="close"><i class="ri-close-fill"></i></span>
-                <div class="carousel">
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/830949167?h=7ff0133d65&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
+            <div class="video_popup">
 
-                </div>
-              </div>
-            </div>
+              <a data-fancybox="video10" data-src="https://player.vimeo.com/video/830949167/" href="javascript:;" style="display:none;"></a>
+          </div>
+
 
           </div>
           <div class="project_description">
@@ -876,25 +775,15 @@
             <div class="details_end">
               <span></span>
               <button onclick="shareProject('filterDiv-12')"><i class="ri-share-forward-fill share"></i>Share</button>
-              <button class="watch-video-button objects">Watch Video</button>
-
+              <button class="watchvideobutton" data-video="video12">Watch Video</button>
             </div>
 
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                <span id="close-popup" class="close"><i class="ri-close-fill"></i></span>
-                <div class="carousel">
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/795579030?h=7ff0133d65&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
+            <div class="video_popup">
 
-                </div>
-              </div>
-            </div>
+              <a data-fancybox="video12" data-src="https://player.vimeo.com/video/795579030/" href="javascript:;" style="display:none;"></a>
+          </div>
 
+      
           </div>
           <div class="project_description">
             <p class="project_paragraph">
@@ -942,24 +831,17 @@
             <div class="details_end">
               <span></span>
               <button onclick="shareProject('filterDiv-13')"><i class="ri-share-forward-fill share"></i>Share</button>
-              <button class="watch-video-button spaces">Watch Video</button>
+              <button class="watchvideobutton" data-video="video13">Watch Video</button>
+
 
             </div>
 
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                <span id="close-popup" class="close"><i class="ri-close-fill"></i></span>
-                <div class="carousel">
-                  <div class="carousel-item">
-                    <div class="video-wrapper">
-                      <iframe src="https://player.vimeo.com/video/797712472?h=7ff0133d65&title=0&portrait=0"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
+            <div class="video_popup">
 
-                </div>
-              </div>
-            </div>
+              <a data-fancybox="video12" data-src="https://player.vimeo.com/video/797712472/" href="javascript:;" style="display:none;"></a>
+          </div>
+
+     
 
           </div>
           <div class="project_description">

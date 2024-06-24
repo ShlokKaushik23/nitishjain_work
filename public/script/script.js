@@ -222,12 +222,6 @@ const galleriesData = [
             "./public/images/projects/14_tunnels/Nitish-Jain_India-International-Jewellery-Show_©Atelier-Anonyme-Design_13.webp",
 
 
-
-
-
-
-
-
         ]
     }
 
@@ -237,36 +231,41 @@ const galleriesData = [
 galleriesData.forEach(galleryData => {
     const section = document.getElementById(`gallery${galleryData.id}`);
     section.innerHTML = `
-            <div class="controls">
-            
-                    <div class="indicators" id="indicators${galleryData.id}"></div>
-                    <div>
-                    <button class="prev" data-gallery="${galleryData.id}"><i class="ri-arrow-left-s-line"></i></button>
-                    <button class="next" data-gallery="${galleryData.id}"><i class="ri-arrow-right-s-line"></i></button>
-                    </div>
-                </div>
-                <div class="image_section gallery">
-                    ${galleryData.images.map(src => `<a href="${src}"><img src="${src}" alt=""></a>`).join('')}
-                </div>
-                
-                
-            `;
+        <div class="controls">
+            <button class="prev" data-gallery="${galleryData.id}"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 3.75C11.04 3.75 3.75 11.04 3.75 20C3.75 28.96 11.04 36.25 20 36.25C28.96 36.25 36.25 28.96 36.25 20C36.25 11.04 28.96 3.75 20 3.75ZM20 6.25C27.6087 6.25 33.75 12.3913 33.75 20C33.75 27.6087 27.6087 33.75 20 33.75C12.3913 33.75 6.25 27.6087 6.25 20C6.25 12.3913 12.3913 6.25 20 6.25ZM19.1 11.9925L11.9938 19.1L11.0938 20L11.9938 20.9L19.1025 28.0075L20.9 26.25L15.9 21.25H28.75V18.75H15.9L20.9 13.75L19.1 11.9925Z" fill="white"/>
+</svg>
+
+
+</button>
+            <div class="indicators" id="indicators${galleryData.id}"></div>
+            <button class="next" data-gallery="${galleryData.id}"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 3.75C11.04 3.75 3.75 11.04 3.75 20C3.75 28.96 11.04 36.25 20 36.25C28.96 36.25 36.25 28.96 36.25 20C36.25 11.04 28.96 3.75 20 3.75ZM20 6.25C27.6087 6.25 33.75 12.3913 33.75 20C33.75 27.6087 27.6087 33.75 20 33.75C12.3913 33.75 6.25 27.6087 6.25 20C6.25 12.3913 12.3913 6.25 20 6.25ZM20.9 11.9925L19.1 13.75L24.1 18.75H11.25V21.25H24.1L19.1 26.25L20.9 28.0075L28.0075 20.8987L28.9075 19.9987L28.0075 19.0988L20.8987 11.9913L20.9 11.9925Z" fill="white"/>
+</svg>
+
+</button>
+        </div>
+        <div class="image_section gallery">
+            ${galleryData.images.map((src, index) => `<a href="${src}" data-index="${index}"><img src="${src}" alt=""></a>`).join('')}
+        </div>
+    `;
 
     lightGallery(section.querySelector('.image_section'), {
         download: false,
         fullscreen: false,
     });
 
-   
-
     const imageSection = section.querySelector('.image_section');
     const indicators = section.querySelector(`#indicators${galleryData.id}`);
     const images = imageSection.getElementsByTagName('img');
+    const prevButton = section.querySelector('.prev');
+    const nextButton = section.querySelector('.next');
+    const numImages = images.length;
     let currentIndex = 0;
 
     function updateIndicators() {
         indicators.innerHTML = '';
-        for (let j = 0; j < images.length; j++) {
+        for (let j = 0; j < numImages; j++) {
             const indicator = document.createElement('div');
             if (j === currentIndex) {
                 indicator.classList.add('indicate');
@@ -280,19 +279,47 @@ galleriesData.forEach(galleryData => {
     }
 
     function updateGallery() {
-        const offset = currentIndex * (images[0].clientWidth + 10);
-        imageSection.scrollTo({
-            left: offset,
-            behavior: 'smooth',
-        });
+        const currentImage = images[currentIndex];
+        const offsetLeft = currentImage.parentElement.offsetLeft;
+        const sectionScrollLeft = imageSection.scrollLeft;
+        const sectionWidth = imageSection.clientWidth;
+        const imageWidth = currentImage.clientWidth;
+        const maxScrollLeft = imageSection.scrollWidth - sectionWidth;
+
+        if (offsetLeft < sectionScrollLeft) {
+            imageSection.scrollTo({
+                left: offsetLeft,
+                behavior: 'smooth'
+            });
+        } else if (offsetLeft + imageWidth > sectionScrollLeft + sectionWidth) {
+            imageSection.scrollTo({
+                left: offsetLeft + imageWidth - sectionWidth,
+                behavior: 'smooth'
+            });
+        }
+
         updateIndicators();
+        updateControlsVisibility();
+    }
+
+    function updateControlsVisibility() {
+        if (currentIndex === 0) {
+            prevButton.style.display = 'none';
+            nextButton.style.display = 'block';
+        } else if (currentIndex === numImages - 1) {
+            prevButton.style.display = 'block';
+            nextButton.style.display = 'none';
+        } else {
+            prevButton.style.display = 'block';
+            nextButton.style.display = 'block';
+        }
     }
 
     function navigate(direction) {
         if (direction === 'prev') {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : numImages - 1;
         } else {
-            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            currentIndex = (currentIndex < numImages - 1) ? currentIndex + 1 : 0;
         }
         updateGallery();
     }
@@ -305,16 +332,4 @@ galleriesData.forEach(galleryData => {
 
     updateIndicators();
     updateGallery();
-})
-
-
-
-
-
-
-
-
-
-
-
-
+});
