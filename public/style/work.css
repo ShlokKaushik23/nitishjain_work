@@ -421,7 +421,7 @@ main {
 .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton::after {
   content: "";
   position: absolute;
-  width: 75%;
+  width: 72%;
   height: 1.5px;
   display: block;
   
@@ -1382,7 +1382,7 @@ main {
   }
   .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton  {
     display: block;
-    font-size: 3.5vw;
+    font-size: 4vw;
     margin: 0px 0 6px 0;
     padding: 4px 8px;
   }
@@ -1403,12 +1403,11 @@ main {
   .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton::after {
     content: "";
     position: absolute;
-    width: 75%;
+    width: 80% !important;
     height: 1.5px;
     display: block;
   
     background-color: var(--yellow-color);
-    transition: display 0s; /* Ensure immediate disappearance */
   }
   
   .video-wrapper {
