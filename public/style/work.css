@@ -1,12 +1,16 @@
 
-
+*{
+  margin: 0;
+  padding: 0;
+}
 html {
   scroll-behavior: smooth;
 }
+a{
+  color: inherit;
+}
 
-/* * {
-  border: 1px solid red;
-} */
+
 
 main {
   /* box-sizing: border-box; */
@@ -296,6 +300,7 @@ main {
   grid-area: 1 / 1 / 2 / 2;
   width: 100%;
   padding: 0 84px;
+  margin-top: 12px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -398,8 +403,6 @@ main {
   position: relative;
   margin: 16px 0;
   padding: 8px 16px; /* Set padding to ensure consistent size */
-  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-radius 0.4s ease-in-out, transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Increase transition duration and add easing */
-  transform-origin: bottom left;
 }
 
 .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton:hover {
@@ -604,12 +607,10 @@ main {
 .project_container .filterDiv .project_section .image_container {
   grid-area: 2 / 1 / 3 / 3;
   /* height: 50px; */
-  margin: 48px 0 0 84px;
   width: 100%;
   display: flex;
-
-
 }
+
 
 /* .project_container .filterDiv .project_section .image_container .video {
   margin-right: 24px;
@@ -619,47 +620,45 @@ main {
 .gallery-container {
   position: relative;
   scroll-behavior: smooth;
-  /* height: 550px; */
   width: 100%;
-  /* min-width: 100px; */
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  margin: 12px 0 0 84px;
+
 }
 
-.image_section {
-  display:inline-block;
-  /* overflow-x: auto; */
-  overflow:scroll;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  width: 100%;
+.gallery-container::-webkit-scrollbar {
+  height: 8px;
+  border-radius: 10px;
+}
+
+.gallery-container::-webkit-scrollbar-track {
+  background: #EEEEEE;
+  border-radius: 10px;
+
   
 }
 
-.image_section::-webkit-scrollbar {
-  display: none;
-}
-.gallery-container::-webkit-scrollbar {
-  display: none;
+.gallery-container::-webkit-scrollbar-thumb {
+  background-color: #E7BF83;
+  border-radius: 10px;
+  
 }
 
 .image_section img {
-  width: 100%;
-  height: 470px;
   flex-shrink: 0;
-  gap: 30px;
-  /* scroll-snap-align: start; */
-  border-radius: 24px;
-  padding: 12px;
-  margin-left: -12px;
-  margin-top: 24px;
-  object-fit: cover;
-
-
+  width: calc(100% - 12px); /* Calculate width with 12px spacing */
+  height: 446px;
+  scroll-snap-align: start;
+  border-radius: 16px;
+  margin-right: 12px; /* Add right margin between images */
 }
+
+.image_section img:last-child {
+}
+
+
 
 
 /* CSS for centering the controls */
@@ -749,6 +748,7 @@ main {
   } */
   .filterDiv {
     display: none;
+    padding: 24px 0;
   }
   
   .filterDiv.visible {
@@ -1019,9 +1019,9 @@ main {
   .project_container .filterDiv .project_section .project_details .details_end span {
     display: none;
   }
-  .project_container .filterDiv .project_section .project_details .details_end .watch-video-button  {
+  .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton  {
     display: block;
-    font-size: 1.5vw;
+    font-size: 2.25vw;
     margin: 6px 0 12px 0;
   }
 
@@ -1040,7 +1040,13 @@ main {
     order: 2;
      margin: 0;
      padding-left: 0;
+     margin-bottom: 24px;
      
+     
+  }
+  .project_container .filterDiv .project_section .image_container a {
+    margin: 0;padding: 0;
+    height: 0;
   }
 
 
@@ -1319,10 +1325,14 @@ main {
 
 
   /* ==== PROJECT CARD =========== */
+
+  .project_container .filterDiv {
+    padding: 12px 0;
+  }
   .project_container .filterDiv .project_section {
     display: flex;
     flex-direction: column;
-    padding: 4.688vw;
+    padding: 4.688vw 0 4.688vw 4.688vw;
 
     margin: 0;
   }
@@ -1370,11 +1380,37 @@ main {
   .project_container .filterDiv .project_section .project_details .details_end span {
     display: none;
   }
-  .project_container .filterDiv .project_section .project_details .details_end .watch-video-button  {
+  .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton  {
     display: block;
     font-size: 3.5vw;
-    margin: 3px 0 6px 0;
+    margin: 0px 0 6px 0;
+    padding: 4px 8px;
   }
+
+  .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton:hover {
+    border-radius: 20px;
+    background-color: var(--yellow-color); /* Set background color on hover */
+    color: white; /* Set text color on hover */
+    opacity: 1; /* Ensure opacity does not go to 0 */
+    padding: 4px 8px; /* Set padding to ensure consistent size */
+  
+  }
+  
+  .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton:hover::after {
+    display: none; /* Remove ::after element on hover */
+  }
+  
+  .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton::after {
+    content: "";
+    position: absolute;
+    width: 75%;
+    height: 1.5px;
+    display: block;
+  
+    background-color: var(--yellow-color);
+    transition: display 0s; /* Ensure immediate disappearance */
+  }
+  
   .video-wrapper {
     
     height: calc(100vh - 50vh);
@@ -1383,7 +1419,8 @@ main {
   .project_container .filterDiv .project_section .project_description {
     order: 3;
     padding: 0;
-    margin-top: -24px;
+    /* margin-top: -24px; */
+    margin-top: 24px;
     font-size: 3.5vw;
     line-height: 16.7px;
   }
@@ -1395,25 +1432,45 @@ main {
   .project_container .filterDiv .project_section .image_container {
     order: 2;
      margin: 0;
-     padding-left: 0;
+    padding: 0;
+
+     
      
   }
   .gallery-container {
-    height: 300px;
+    margin: 12px 0 0 0px;
+  }
+
+  .gallery-container::-webkit-scrollbar {
+    height: 4px;
+    border-radius: 10px;
+  }
+  
+  .gallery-container::-webkit-scrollbar-track {
+    background: #EEEEEE;
+    border-radius: 10px;
+  
+    
+  }
+  
+  .gallery-container::-webkit-scrollbar-thumb {
+    background-color: #E7BF83;
+    border-radius: 10px;
+    
   }
   .image_section img {
-    width: 100%;
+    width: calc(100% - 12px);
     height: 240px;
     flex-shrink: 0;
     gap: 30px;
     /* scroll-snap-align: start; */
-    border-radius: 24px;
-    padding: 12px 6px;
-    margin-left: -6px;
+    border-radius: 16px;
+    /* padding: 12px 6px; */
+    /* margin-left: -6px; */
   
   }
 
-  .indicators div {
+  /* .indicators div {
     height: 6px;
     width: 6px;
     background-color: #EEEEEE;
@@ -1421,12 +1478,12 @@ main {
     margin-right: 12px;
     cursor: pointer;
    
-  }
+  } */
 
-  .controls {
+  /* .controls {
    
     padding-right: 5.25vw;
-  }
+  } */
 
 }
 
