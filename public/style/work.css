@@ -23,6 +23,7 @@ main {
   top: 0;
   z-index: 1000; /* Adjust z-index as needed */
   background-color: #EEEEEE; /* Optional: Add a background color */
+  height: 3.5rem;
 }
 
 .category_section.sticky .project_count {
@@ -300,19 +301,23 @@ main {
   grid-area: 1 / 1 / 2 / 2;
   width: 100%;
   padding: 0 84px;
-  margin-top: 12px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .project_container .filterDiv .project_section .project_details .project_timeline {
   display: flex;
   font-size: 1.25vw;
-  /* margin-bottom: 1vw; */
+  margin-bottom: 1vw;
+  
 }
+/* *{
+  outline: 1px solid red;
+} */
 
 .project_container .filterDiv .project_section .project_details .project_timeline .year {
   color: var(--gray-color);
   border-right: 1.8px solid #CBCBCB;
+  line-height: 16px;
   padding: 0 12px 0 0;
   font-weight: 550;
   
@@ -321,6 +326,7 @@ main {
 .project_container .filterDiv .project_section .project_details .project_timeline .project_category {
   display: flex;
   font-size: 16px;
+  line-height: 16px;
   font-weight: 550;
   padding: 0 0 0 12px;  
 }
@@ -356,12 +362,16 @@ main {
   font-size: 2.5vw;
   font-family: var(--font-playfair-display);
   text-overflow: clip;
+  line-height: 2.5vw;
 
 }
 
+
+
 .project_container .filterDiv .project_section .project_details .project_heads .project_subheading {
   font-size: 1.25vw;
-  padding: 6px 0;
+  line-height: 1.5vw;
+  padding: 12px 0;
   font-weight: var(--w-400);
   text-overflow: clip;
 }
@@ -371,7 +381,8 @@ main {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  margin-top: 6px;
+  /* margin-top: 6px; */
+  /* margin-bottom: 0; */
 }
 
 /* Custom CSS to make video take full height and width */
@@ -401,9 +412,9 @@ main {
   font-size: 1.25vw;
   display: block;
   font-weight: var(--w-400);
-  
   position: relative;
-  margin: 16px 0;
+  /* margin: 16px 0; */
+  margin-top: 12px;
   padding: 8px 16px; /* Set padding to ensure consistent size */
 }
 
@@ -611,7 +622,9 @@ main {
   /* height: 50px; */
   width: 100%;
   display: flex;
+  margin-top: 24px;
 }
+
 
 
 /* .project_container .filterDiv .project_section .image_container .video {
@@ -626,7 +639,7 @@ main {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  margin: 12px 0 0 84px;
+  margin: 0 0 0 84px;
 
 }
 
@@ -650,11 +663,11 @@ main {
 
 .image_section img {
   flex-shrink: 0;
-  width: calc(100% - 12px); /* Calculate width with 12px spacing */
+  width: calc(100% - 24px); /* Calculate width with 12px spacing */
   height: 446px;
   scroll-snap-align: start;
   border-radius: 16px;
-  margin-right: 12px; /* Add right margin between images */
+  margin-right: 24px; /* Add right margin between images */
 }
 
 .image_section img:last-child {
@@ -842,7 +855,6 @@ main {
 
     font-size: 2.083vw;
     
-    
   }
 
   .category_section .filter_button button {
@@ -886,7 +898,7 @@ main {
     background-color: var(--color-white);
     align-items: start;
     justify-content: space-between;
-    border-radius: 24px ;
+    border-radius: 24px;
   }
   .category_section .category_button .allcategory_button  {
     display: flex;
@@ -894,27 +906,42 @@ main {
     justify-content: center;
     width: 100%;
   }
+ 
   .category_section .category_button .allcategory_button div{
     display: flex;
     flex-direction: column;
-    gap:24px;
-    margin: 24px 24px 6px;
-    width: 50%;
+    gap: 24px;
+    /* margin: 48px 0; */
+    padding: 48px;
+    width: 100%;
     
   }
 
   .category_section .category_button .allcategory_button .project_count {
     width: 100%;
     text-align: center;
-    /* padding: 0; */
-    /* margin-right: 0; */
-    width: 50%;
   }
 
-  #categoryCount{
-    display: block;
-  }
 
+ 
+
+  #categoryCount {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+#categoryCount::before {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1.5rem; /* Matches the height of the text */
+    background-color: #E7BF83;
+    margin-right: 10px; /* Adjust spacing as needed */
+}
+
+ 
   
   .category_section .category_button .btn {
     outline: 1px solid var(--text-color);
@@ -925,25 +952,25 @@ main {
   }
   .btn.active[data-filter="Spaces"] {
     color: #fff;
-    outline: none !important;
+    outline: 1px solid #AA91BD !important;
     background-color: #AA91BD !important;
   }
   
   .btn.active[data-filter="Performances"] {
     color: #fff;
-    outline: none !important;
+    outline: 1px solid #8BA9C5 !important;
     background-color: #8BA9C5 !important;
   }
   
   .btn.active[data-filter="Objects"] {
     color: #fff;
-    outline: none !important;
+    outline: 1px solid #CE9299  !important;
     background-color: #CE9299 !important;
   }
   
   .btn.active[data-filter="Methods"] {
     color: #fff;
-    outline: none !important;
+    outline: 1px solid #9CC6BC !important;
     background-color: #9CC6BC !important;
   }
   
@@ -964,6 +991,7 @@ main {
   }
   .btn.apply, .btn.cancel {
     display: inline-block;
+    bottom: 0;
 }
 
   .category_section .category_button .bottom_button .btn.cancel {
@@ -975,7 +1003,7 @@ main {
   }
   .category_section .category_button .bottom_button .btn.apply {
     background-color: #1D3232;
-    color: var(--color-white);
+    color: #fff !important;
     outline: none !important;
 
   }
@@ -995,43 +1023,50 @@ main {
     color: var(--gray-color);
   }
 
-
-
-
   /* ==== PROJECT CARD =========== */
   .project_container .filterDiv .project_section {
     display: flex;
     flex-direction: column;
-    padding: 4.688vw;
-
+    padding-left: 4.688vw;
     margin: 0;
   }
   .project_container .filterDiv .project_section .project_details {
      order: 1;
      padding: 0;
      margin: 0;
-     
   }
 
   .project_container .filterDiv .project_section .project_details .project_timeline {
     font-size: 2.25vw;
+    margin-bottom: 1vw;
+
   }
 
   .project_container .filterDiv .project_section .project_details .project_timeline .project_category {
-    display: flex;
     font-size: 2.25vw;
+    line-height: 2.25vw;
+
+  }
+
+  .project_container .filterDiv .project_section .project_details .project_timeline .year {
+    color: var(--gray-color);
+    border-right: 1.8px solid #CBCBCB;
+    line-height: 2.25vw;
+    padding: 0 12px 0 0;
     font-weight: 550;
-    padding: 0 0 0 6px;  
+    
   }
+
   .project_container .filterDiv .project_section .project_details .project_heads .project_heading {
-    /* line-height: 2.5vw; */
     font-size: 4vw;
-  
+    line-height: 4vw;
   }
+
+ 
   .project_container .filterDiv .project_section .project_details .project_heads .project_subheading {
     font-size: 2.25vw;
-    line-height: 3vw;
-    padding: 6px 0;
+    line-height: 2.25vw;
+    padding: 12px 0;
     font-weight: var(--w-400);
     text-overflow: clip;
   }
@@ -1048,8 +1083,9 @@ main {
   .project_container .filterDiv .project_section .project_description {
     order: 3;
     padding: 0;
-    margin-top: -12px;
+    /* margin-top: -12px; */
     font-size: 2.25vw;
+    line-height: 3vw;
   }
   .project_container .filterDiv .project_section .project_description  .readMore_button {
     font-size: 2.25vw;
@@ -1061,11 +1097,16 @@ main {
      margin: 0;
      padding-left: 0;
      margin-bottom: 24px;
-     
+     margin-top: 24px;
      
   }
+
+  .gallery-container {
+    margin: 0 0 0 0px;
+  }
   .project_container .filterDiv .project_section .image_container a {
-    margin: 0;padding: 0;
+    margin: 0;
+    padding: 0;
     height: 0;
   }
 
@@ -1260,10 +1301,19 @@ main {
     margin: 24px 12px 6px;
     
   }
-  #categoryCount{
-    display: block;
-  }
-  
+  #categoryCount {
+    display: flex;
+    justify-content: center;
+}
+
+#categoryCount::before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 1.1rem; /* Matches the height of the text */
+    background-color: #E7BF83;
+    margin-right: 8px; /* Adjust spacing as needed */
+}
 
   .category_section .category_button .allcategory_button .project_count {
     width: 100%;
@@ -1282,25 +1332,25 @@ main {
 
   .btn.active[data-filter="Spaces"] {
     color: #fff !important;
-    outline: none !important;
+    outline: 1px solid #AA91BD  !important;
     background-color: #AA91BD !important;
   }
   
   .btn.active[data-filter="Performances"] {
     color: #fff !important;
-    outline: none !important;
+    outline: 1px solid #8BA9C5 !important;
     background-color: #8BA9C5 !important;
   }
   
   .btn.active[data-filter="Objects"] {
     color: #fff !important;
-    outline: none !important;
+    outline: 1px solid #CE9299 !important;
     background-color: #CE9299 !important;
   }
   
   .btn.active[data-filter="Methods"] {
     color: #fff !important;
-    outline: none !important;
+    outline: 1px solid #9CC6BC !important;
     background-color: #9CC6BC !important;
   }
 
@@ -1369,7 +1419,6 @@ main {
     display: flex;
     flex-direction: column;
     padding: 4.688vw 0 4.688vw 4.688vw;
-
     margin: 0;
   }
   .project_container .filterDiv .project_section .project_details {
@@ -1381,15 +1430,19 @@ main {
 
   .project_container .filterDiv .project_section .project_details .project_timeline {
     font-size: 4vw;
+    margin-bottom: 12px;
   }
   .project_container .filterDiv .project_section .project_details .project_timeline .year {
     color: var(--gray-color);
     border-right: 1px solid var(--grey-color);
     padding: 0 6px 0 0;
+    font-weight: 550;
   }
   
   .project_container .filterDiv .project_section .project_details .project_timeline .categories {
     padding: 0 0 0 6px;
+    font-weight: 500;
+
   }
 
   .project_container .filterDiv .project_section .project_details .project_timeline .project_category {
@@ -1401,15 +1454,18 @@ main {
   .project_container .filterDiv .project_section .project_details .project_heads .project_heading {
     /* line-height: 2.5vw; */
     font-size: 5.5vw;
+    line-height: 5.5vw;
   
   }
   .project_container .filterDiv .project_section .project_details .project_heads .project_subheading {
     font-size: 4vw;
     line-height: 4vw;
-    padding: 6px 0;
+    padding: 8px 0;
     font-weight: var(--w-400);
     text-overflow: clip;
     font-family: Arial, Helvetica, sans-serif;
+    padding-right: 12px;
+
 
   }
 
@@ -1421,6 +1477,7 @@ main {
     font-size: 4vw;
     margin: 0px 0 6px 0;
     padding: 4px 8px;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton:hover {
@@ -1450,14 +1507,18 @@ main {
     
     height: calc(100vh - 50vh);
   }
+  
 
   .project_container .filterDiv .project_section .project_description {
     order: 3;
     padding: 0;
     /* margin-top: -24px; */
-    margin-top: 24px;
-    font-size: 3.5vw;
-    line-height: 16.7px;
+    margin-top: 12px;
+    padding-right: 12px;
+    font-size: 4vw;
+    line-height: 4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    /* line-height: 16.7px; */
   }
   .project_container .filterDiv .project_section .project_description  .readMore_button {
     font-size: 3.5vw;
