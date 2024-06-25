@@ -310,9 +310,7 @@ main {
   margin-bottom: 1vw;
   
 }
-/* *{
-  outline: 1px solid red;
-} */
+
 
 .project_container .filterDiv .project_section .project_details .project_timeline .year {
   color: var(--gray-color);
@@ -1265,10 +1263,7 @@ main {
 
   }
 
-  .category_section .category_button .project_count {
-    background-color: red;
-  }
-
+ 
  
 
   .category_section .filter_button {
