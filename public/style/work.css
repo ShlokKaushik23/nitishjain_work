@@ -1307,7 +1307,7 @@ main {
     content: '';
     display: inline-block;
     width: 1px;
-    height: 1.1rem; /* Matches the height of the text */
+    height: 1rem; /* Matches the height of the text */
     background-color: #E7BF83;
     margin-right: 8px; /* Adjust spacing as needed */
 }
@@ -1496,7 +1496,7 @@ main {
   .project_container .filterDiv .project_section .project_details .details_end .watchvideobutton::after {
     content: "";
     position: absolute;
-    width: 85% !important;
+    width: 82% !important;
     height: 1.5px;
     display: block;
   
