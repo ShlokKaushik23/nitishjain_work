@@ -1301,15 +1301,16 @@ main {
   #categoryCount {
     display: flex;
     justify-content: center;
+    line-height: 0.8rem;
 }
 
 #categoryCount::before {
     content: '';
     display: inline-block;
     width: 1px;
-    height: 1rem; /* Matches the height of the text */
+    height: 0.8rem; /* Matches the height of the text */
     background-color: #E7BF83;
-    margin-right: 8px; /* Adjust spacing as needed */
+    margin-right: 4px; /* Adjust spacing as needed */
 }
 
   .category_section .category_button .allcategory_button .project_count {
