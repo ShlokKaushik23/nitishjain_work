@@ -1237,7 +1237,7 @@ main {
     /* flex-direction: column; */
     height: 12vw;
     position: relative;
-    background-color:var(--background-color);
+    background-color: var(--background-color);
     padding: 0 4.688vw;
     font-size: 3.5vw;
     
@@ -1265,7 +1265,9 @@ main {
 
   }
 
-  
+  .category_section .category_button .project_count {
+    background-color: red;
+  }
 
  
 
@@ -1320,6 +1322,7 @@ main {
     text-align: center;
     padding: 0;
     margin-right: 0;
+    
   }
 
   .category_section .category_button .btn {
@@ -1403,10 +1406,11 @@ main {
     border:0;
     /* padding: 0 40px; */
     clear: both;
-    display: inline-block;
+    /* display: inline-block; */
     overflow: hidden;
     white-space: nowrap;
     color: var(--gray-color);
+    padding: 0;
   }
 
 
@@ -1414,6 +1418,7 @@ main {
 
   .project_container .filterDiv {
     padding: 12px 0;
+    margin-bottom: 12px;
   }
   .project_container .filterDiv .project_section {
     display: flex;
