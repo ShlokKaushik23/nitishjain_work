@@ -45,7 +45,7 @@ body::-webkit-scrollbar {
   border-radius: var(--br-base);
   display: flex;
   /* padding: 12px 48px; */
-  background-image: url(/public/images/Group\ 7_4.png);
+  background-image: url(../../public/images/hero_img.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
