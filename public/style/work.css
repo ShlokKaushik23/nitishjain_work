@@ -977,6 +977,8 @@ grid-row-gap: 0px;
      display: flex;
     justify-content: center;
     width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 
   }
  #categoryCount {
@@ -1385,7 +1387,7 @@ grid-row-gap: 0px;
     display: flex;
     justify-content: start;
     align-items: flex-start;
-    /* line-height: 0.8rem; */
+    line-height: 1.5rem;
     font-size: 5vw;
     position: fixed;
 
@@ -1397,13 +1399,14 @@ grid-row-gap: 0px;
     width: 1px;
     height: 1.5rem; /* Matches the height of the text */
     background-color: #E7BF83;
-    margin-right: 4px; /* Adjust spacing as needed */
+    margin-right: 6px; /* Adjust spacing as needed */
 }
 
   .category_section .category_button .allcategory_button .project_count {
     width: 100%;
-    margin: 0;
     /* padding-left: 30px; */
+    margin-left: 0;
+    margin-right: 0;
     display: flex;
     justify-content: center;
   }
